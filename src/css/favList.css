@@ -1,0 +1,21 @@
+.body{
+    background-size: 100vh;
+}
+.fav-list{
+    padding-top: 4rem;
+    height: 100%;
+    bottom: 0;
+}
+
+.no-favs{
+    height: 85.1vh;
+}
+
+.no-favs h1{
+    color: #fff;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15%;
+}
