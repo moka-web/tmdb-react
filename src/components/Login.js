@@ -43,7 +43,7 @@ function Login(){
             navigate('/listado')
 
         }).catch((error)=>{
-            console.log(error.message)
+            console.log( `a ver toga : ${error.message} ` )
         })
 
     }
