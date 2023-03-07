@@ -1,0 +1,49 @@
+.footer{
+    height: 100px;
+    background-color: #1f2d67;
+    padding-left: 8%;
+    padding-right: 8%;
+    padding-top: 2%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-footer ul{
+    display: flex;
+    
+}
+
+.nav-footer ul li {
+    list-style: none;
+    margin-bottom: 2%;
+    margin-right: 10%;
+}
+
+
+.nav-footer ul li a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer div h5{
+    color: #fff;
+}
+
+
+@media (max-width: 600px){
+    .footer{
+
+        padding-top: 8%;
+       
+    }
+
+    .footer div h5{
+       
+        font-size: 0.8rem;
+        margin-left: 2%;
+    }
+    .size-social{
+        font-size: 1rem;
+    }
+
+}
