@@ -1,11 +1,12 @@
 import Login from "./components/Login";
 import ItemList from "./components/ItemList";
-import {Routes , Route} from "react-router-dom";
+import {Routes , Route,useNavigate} from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer"
 import ItemDetail from "./components/ItemDetail"
 import Results from "./components/Results";
-import { useState,useEffect } from "react";
+import { useState,useEffect, useContext } from "react";
+import  AuthContext  from './context/auth-context'
 
 import "./css/bootstrap.css.map"
 import "./css/bootstrap.css"
@@ -17,9 +18,19 @@ function App() {
 
   const [favourites, setFavourites] = useState([])
   const [isLoged , setIsloged]=useState(false)
+  const navigate = useNavigate()
+  const { currentUser } = useContext(AuthContext)
 
-  
-    
+  console.log('User:', !!currentUser);
+
+  useEffect(() => {
+    if (currentUser) {
+      navigate('/listado')
+    }
+  }, [currentUser])
+
+
+
   useEffect(() => {
       const favsInLocal = localStorage.getItem("favs");
     
@@ -31,9 +42,6 @@ function App() {
 
     
   },[]);
-
-  const token = sessionStorage.getItem("token")
- 
 
 
   const addRemFavs = e=>{
@@ -77,7 +85,7 @@ function App() {
    <Header favs={favourites}/>
    <Routes>
     <Route exact path="/" element={<Login/>} />
-    <Route exact path="/listado" element={<ItemList addRemFavs={addRemFavs} />}/>
+    <Route exact path="/listado" element={ currentUser? <ItemList addRemFavs={addRemFavs} /> : <Login/>   }/>
     <Route exact path="/detalle/:id" element={<ItemDetail/>}/>
     <Route exact path="/resultados" element={<Results/>}></Route>
     <Route exact path="/favs" element={<Favourites favourites={favourites} addRemFavs={addRemFavs}/>}></Route>

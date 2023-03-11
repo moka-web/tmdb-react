@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
 import { useNavigate, Link, Navigate } from "react-router-dom";
-import { Carousel } from "react-bootstrap";
 import swal from "sweetalert";
 import Item from "./Item";
 import axios from "axios";
 import "../css/ItemList.css"
 import MyCarousel from "./Carousel";
+import { useContext } from 'react'
+import  AuthContext  from '../context/auth-context'
 
 
 function ItemList ({addRemFavs}){
-    
-    let token= sessionStorage.getItem("token");
+    const { currentUser, signOut } = useContext(AuthContext)
+
     let [movieList , setMovieList] = useState([]);
     let [firsResults, setFirstResults] = useState([]);
     
@@ -42,7 +43,6 @@ function ItemList ({addRemFavs}){
    
     return (
         <>
-            {!token && <Navigate to="/"/>}
             
             <div className=" Item-list ">
                
@@ -50,6 +50,8 @@ function ItemList ({addRemFavs}){
                 <div className="difuminate"></div>
 
                 <div className="container">
+                    <h5> Hello {currentUser?.email} !</h5>
+                    <button onClick={signOut}>Sign Out</button>
                     <div className="row" >
 
                     {
