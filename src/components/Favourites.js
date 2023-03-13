@@ -3,11 +3,11 @@ import Item from "./Item";
 import "../css/favList.css"
 
 function Favourites ({addRemFavs,favourites}){
-    let token= sessionStorage.getItem("token")
+   
     return(
         <>
         <div className="fav-list">
-            {!token && <Navigate to="/"/>}
+       
             <h2>favoritos</h2>
             <div className="container">
                     <div className="row" >

@@ -47,11 +47,14 @@ function ItemList ({addRemFavs}){
             <div className=" Item-list ">
                
                 <MyCarousel  firstResults={ firsResults}/>
-                <div className="difuminate"></div>
+                <div className="user_logOut">
+                    <h5 className="user-email"> Hello {currentUser?.email} !</h5>
+                    <button className="Logout-btn" onClick={signOut}>Sign Out</button>
+                </div>
 
                 <div className="container">
-                    <h5> Hello {currentUser?.email} !</h5>
-                    <button onClick={signOut}>Sign Out</button>
+                    
+                  
                     <div className="row" >
 
                     {

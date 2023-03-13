@@ -1,10 +1,10 @@
-import axios from "axios";
-import React from 'react'
-// import swal from '@sweetalert/with-react';
-import swal from "sweetalert";
-import { useNavigate, Navigate } from "react-router-dom";
+
+import React, { useContext } from 'react'
+import { useNavigate, Navigate, Link } from "react-router-dom";
 import { ChangeEvent, FormEvent, useState } from 'react'
+import AuthContext from '../context/auth-context';
 import { signInUser } from '../services/firebase'
+
 import "../css/Login.css"
 
 
@@ -12,22 +12,27 @@ import "../css/Login.css"
 const defaultFormFields ={
     email:"",
     passWord:""
-}
+}//valores por de defecto del formulario 
 
 function Login(){
-    
-    const [formFields , setFormFields]= useState(defaultFormFields);
-    const {email, passWord} = formFields 
+
+    const { currentUser } = useContext(AuthContext);
+  
+    const [formFields , setFormFields]= useState(defaultFormFields);//estado para manejar los valores del formulario 
+
+    const {email, passWord} = formFields //traigo del estado las key values email y password 
+
     const navigate = useNavigate();
 
 
-    const resetFormFields = ()=>{setFormFields(defaultFormFields)}
+    const resetFormFields = ()=>{setFormFields(defaultFormFields)} //reset del formulario
     
     const submitHandler =(e)=>{
         e.preventDefault();
         try {
-            const userCredentials = signInUser(email,passWord);
-            if (userCredentials){
+            const userCredentials = signInUser(email,passWord);  //en el submit del form envio a firebase el email y el password
+
+            if (userCredentials){ //si las credenciales son validas limpio el formulario e ingreso al sitio
                 resetFormFields()
                 navigate("/listado")
             }
@@ -37,9 +42,10 @@ function Login(){
         }
     };
 
+
     const handleChange = (e)=>{
-        e.preventDefault()
-        const {name,value} = e.target;
+        e.preventDefault() //evito que se recargue el sitio 
+        const {name,value} = e.target; 
         setFormFields({...formFields, [name]:value});
 
     }
@@ -51,10 +57,9 @@ function Login(){
 return(
     <>
    
-    
     <div className="center-login">
         <div className="login">
-        
+         
             <div>
 
                 <h2>Login</h2>
@@ -77,6 +82,8 @@ return(
                     </input>
                     <br/>
                     <button type="submit">ingresar! </button>
+                    <h5>no tienes cuenta?</h5>
+                    <Link to="/registro">registrate!</Link>
                 </form>
 
             </div>

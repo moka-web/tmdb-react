@@ -8,7 +8,6 @@ function MyCarousel ({firstResults}){
     const [selectedIndex, setSelectedIndex] = useState(0)
     const [selectedImage , SetSelectedImage] = useState([])
 
-    console.log(firstResults)
 
     const selectNewImage = (index, images ,next ) =>{
         const condition = next == true ? selectedIndex < firstResults.length -1 : selectedIndex > 0;
@@ -87,42 +86,3 @@ function MyCarousel ({firstResults}){
 export default MyCarousel
 
 
-
-{/* <Carousel>
-                {firstResults.map((movie)=>{
-                    return (
-                        <>
-                            <Carousel.Item key={movie.id}>
-                                <img
-                                className="d-block w-100"
-                                src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-                                alt="First slide"/>
-                                <Carousel.Caption>
-                                <h3>{movie.title}</h3>
-                                <p>{movie.overview.substring(0,100)}</p>
-                                </Carousel.Caption>
-                            </Carousel.Item>
-                        </>
-                    )
-                })}
-            </Carousel> */}
-
-{/* 
-                {firstResults.map((movie)=>{
-                    return (
-                        <>
-                            <div key={movie.id}>
-                                <img
-                                className="d-block w-100"
-                                src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-                                alt="First slide"/>
-                                <div>
-                                <h3>{movie.title}</h3>
-                                <p>{movie.overview.substring(0,100)}</p>
-                                </div>
-                            </div>
-                        </>
-                    )
-                })} 
-
- */}

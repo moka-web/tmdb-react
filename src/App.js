@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer"
 import ItemDetail from "./components/ItemDetail"
 import Results from "./components/Results";
+import Register from "./components/Register";
 import { useState,useEffect, useContext } from "react";
 import  AuthContext  from './context/auth-context'
 
@@ -21,7 +22,7 @@ function App() {
   const navigate = useNavigate()
   const { currentUser } = useContext(AuthContext)
 
-  console.log('User:', !!currentUser);
+ 
 
   useEffect(() => {
     if (currentUser) {
@@ -75,7 +76,7 @@ function App() {
       const removeFromFavs = temporalFavsMovies.filter(e=>e.id !== movieData.id);
       localStorage.setItem("favs",JSON.stringify(removeFromFavs))
       setFavourites(removeFromFavs)
-      console.log("se elimino la pelicula")
+      
     }
 
   }
@@ -84,11 +85,12 @@ function App() {
   <div className="app">
    <Header favs={favourites}/>
    <Routes>
-    <Route exact path="/" element={<Login/>} />
-    <Route exact path="/listado" element={ currentUser? <ItemList addRemFavs={addRemFavs} /> : <Login/>   }/>
+    <Route exact path="/" element={ currentUser? <ItemList addRemFavs={addRemFavs} /> : <Login/>} />
+    <Route exact path="/registro" element={<Register/>} />
+    <Route exact path="/listado" element={ currentUser ? <ItemList addRemFavs={addRemFavs} /> : <Login/>   }/>
     <Route exact path="/detalle/:id" element={<ItemDetail/>}/>
-    <Route exact path="/resultados" element={<Results/>}></Route>
-    <Route exact path="/favs" element={<Favourites favourites={favourites} addRemFavs={addRemFavs}/>}></Route>
+    <Route exact path="/resultados" element={currentUser?<Results/>:<Login/>}></Route>
+    <Route exact path="/favs" element={currentUser?<Favourites favourites={favourites} addRemFavs={addRemFavs}/> :<Login/> }></Route>
    </Routes>
    <Footer/>  
   </div>

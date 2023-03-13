@@ -6,12 +6,15 @@ import Nav from 'react-bootstrap/Nav';
 import {Navbar,NavDropdown,Form,Button,Offcanvas} from 'react-bootstrap';
 import logo from "../assets/img/logo.png"
 import otroLogo from "../assets/img/pngegg.png"
+import AuthContext from "../context/auth-context";
+import { useContext } from "react";
+
 
 
 
 function Header ({favs}){
   
-
+    const {currentUser} = useContext(AuthContext)
    
     return(
         <header className="header">
@@ -32,6 +35,8 @@ function Header ({favs}){
                         </Offcanvas.Title>
                     </Offcanvas.Header>
                     <Offcanvas.Body>
+                        {currentUser&&
+                        <>
                         <Nav className="justify-content-end flex-grow-1 pe-3">
                         
                         <Link className="nav-link" to="/">home</Link>
@@ -42,6 +47,10 @@ function Header ({favs}){
 
                     
                         <SearchBar></SearchBar>
+                        </>
+                    
+                    }
+                        
 
                     </Offcanvas.Body>
                     </Navbar.Offcanvas>

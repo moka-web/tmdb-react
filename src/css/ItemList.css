@@ -2,3 +2,22 @@
     padding-top: 4rem;
 }
 
+.user_logOut{
+    display: flex ;
+    justify-content: center;
+    margin: 5%;
+   
+}
+
+.user_logOut h5{
+    color: #fff;
+    margin-right: 5%;
+    font-size: 2vw;
+}
+
+.user_logOut button{
+    width: 10%;
+    border-radius: 16px;
+    background-color:  #1f2d67;
+    color: #fff;
+}
