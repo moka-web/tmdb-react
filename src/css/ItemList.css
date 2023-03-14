@@ -21,3 +21,29 @@
     background-color:  #1f2d67;
     color: #fff;
 }
+
+
+@media (max-width: 600px){
+
+    .user_logOut{
+       flex-direction: column;
+        margin: 5%;
+        justify-content: center;
+        align-items: center;
+       
+    }
+    
+    .user_logOut h5{
+        color: #fff;
+        margin-right: 5%;
+        font-size: 4vw;
+    }
+    
+    .user_logOut button{
+        width: 40%;
+        border-radius: 16px;
+        background-color:  #1f2d67;
+        color: #fff;
+    }
+
+}
