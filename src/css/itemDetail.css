@@ -1,0 +1,130 @@
+.itemDetail-container{
+    height: 86.5vh;
+    padding: 5%;
+    display: flex;
+    
+    background: rgba(28, 27, 27, 0.445);
+    box-shadow: 0 40px 60px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 2.0px );
+    -webkit-backdrop-filter: blur( 2.0px );
+    overflow: hidden;
+    
+}
+
+.img-detail{
+    height: 100%;
+    margin-top: 10%;
+    object-fit: scale-down;
+    overflow: hidden;
+}
+
+.img-detail-container{
+    height: 100%;
+}
+
+.content-detail-container{
+    margin-top: 10%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+   justify-content: end;
+   margin: 0 auto;
+}
+
+.content-detail-container h5{
+    color: #fff;
+}
+.content-detail-container h1{
+    font-size: 4vw;
+    color: #fff;
+}
+
+.content-detail-container p{
+    color: #fff;
+}
+
+.content-detail-container ul{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10%;
+}
+
+.content-detail-container ul li{
+    color: #e6d706;
+    font-size: 1.3rem;
+}
+
+
+
+
+
+@media (max-width: 600px){
+
+    .itemDetail-container{
+        height:auto;
+        padding-top: 20%;
+        display: flex;
+        flex-direction: column;
+        background: rgba(28, 27, 27, 0.445);
+        box-shadow: 0 40px 60px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 2.0px );
+        -webkit-backdrop-filter: blur( 2.0px );
+        overflow: hidden;
+        
+    }
+    
+    .img-detail{
+        width: 80%;
+        margin-top: 10%;
+        overflow: hidden;
+    }
+    
+    .img-detail-container{
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .content-detail-container{
+        margin-top: auto;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 auto;
+        padding: 10%;
+    }
+    
+    .content-detail-container h5{
+        color: #fff;
+    }
+    .content-detail-container h1{
+        font-size: 6vw;
+        color: #fff;
+    }
+    
+    .content-detail-container p{
+        color: #fff;
+    }
+    
+    .content-detail-container ul{
+        display: flex;
+        justify-content:start;
+        margin-top: 10%;
+    }
+    
+    .content-detail-container ul li{
+        color: #e6d706;
+        font-size: 3vw;
+        margin-right: 1vw;
+        list-style: none;
+    }
+    
+
+
+
+
+}
