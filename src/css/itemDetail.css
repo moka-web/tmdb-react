@@ -28,7 +28,7 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
-   justify-content: end;
+   justify-content: flex-end;
    margin: 0 auto;
 }
 
@@ -112,7 +112,7 @@
     
     .content-detail-container ul{
         display: flex;
-        justify-content:start;
+        justify-content:flex-start;
         margin-top: 10%;
     }
     

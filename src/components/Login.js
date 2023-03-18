@@ -82,8 +82,8 @@ return(
                     </input>
                     <br/>
                     <button type="submit">ingresar! </button>
-                    <h5>no tienes cuenta?</h5>
-                    <Link to="/registro">registrate!</Link>
+                    <h5 className='registerH5'>no tienes cuenta?</h5>
+                    <Link className='register-link' to="/registro">registrate!</Link>
                 </form>
 
             </div>
