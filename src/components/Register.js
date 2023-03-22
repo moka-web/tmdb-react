@@ -26,7 +26,9 @@ function Register (){
             if (userCredentials){ //si las credenciales son validas limpio el formulario e ingreso al sitio
                 resetFormFields()
                 navigate("/listado")
+               
             }
+          
 
         } catch (error) {
             console.log("error de autenticacion de firebase register.js",error)

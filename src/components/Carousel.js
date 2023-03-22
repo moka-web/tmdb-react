@@ -10,8 +10,8 @@ function MyCarousel ({firstResults}){
 
 
     const selectNewImage = (index, images ,next ) =>{
-        const condition = next == true ? selectedIndex < firstResults.length -1 : selectedIndex > 0;
-        const nextIndex =  next == true ? condition ? selectedIndex + 1 : 0 : condition ? selectedIndex - 1 : firstResults.length -1;
+        const condition = next === true ? selectedIndex < firstResults.length -1 : selectedIndex > 0;
+        const nextIndex =  next === true ? condition ? selectedIndex + 1 : 0 : condition ? selectedIndex - 1 : firstResults.length -1;
         SetSelectedImage(firstResults[nextIndex]);
         setSelectedIndex(nextIndex); 
     }
@@ -42,7 +42,7 @@ function MyCarousel ({firstResults}){
                 <button className="carousel-button-left" onClick={previous}>{"<"}</button>
                 
      
-                <img className="carouselImg" src={ selectedImage && new URL(`https://image.tmdb.org/t/p/w500/${selectedImage.backdrop_path}`)  } alt="image Not Found" ></img>
+                <img className="carouselImg" src={ selectedImage && new URL(`https://image.tmdb.org/t/p/w500/${selectedImage.backdrop_path}`)  } alt="Not Found" ></img>
                 
               
 

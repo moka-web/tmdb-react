@@ -18,17 +18,15 @@ import Favourites from "./components/Favourites";
 function App() {
 
   const [favourites, setFavourites] = useState([])
-  const [isLoged , setIsloged]=useState(false)
   const navigate = useNavigate()
   const { currentUser } = useContext(AuthContext)
 
  
-
   useEffect(() => {
     if (currentUser) {
       navigate('/listado')
     }
-  }, [currentUser])
+  },[currentUser])
 
 
 
