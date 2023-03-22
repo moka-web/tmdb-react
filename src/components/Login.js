@@ -73,6 +73,7 @@ return(
                     </input>
                     <br/>
                     <input 
+                            type="password"
                             name='passWord'
                             value={passWord}
                             onChange={handleChange}
